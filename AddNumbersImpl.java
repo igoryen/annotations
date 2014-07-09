@@ -1,12 +1,13 @@
-// 2
+//v3
 
-@WebService(endpointInterface = "annotations.server.AddNumbersIF")
+@WebService
+@HandlerChain(file = "handlers.xml")
 public class AddNumbersImpl {
     /**
      * @param number1
      * @param number2
      * @return The sum
-     * @throws AddNumbersException if any of the numbers to be added is 
+     * @throws AddNumbersException if any of the numbers to be added is
      * negative.
      */
     public int addNumbers(int number1, int number2) throws 
@@ -16,4 +17,5 @@ public class AddNumbersImpl {
                     "added!", "Numbers: " + number1 + ", " + number2);
         } return number1 + number2;
     }
+
 }
