@@ -1,6 +1,8 @@
-//5
+//v6
 @WebService(targetNamespace = "http://duke.example.org",
         name = "AddNumbers")
+@SOAPBinding(style = SOAPBinding.Style.RPC,
+        use = SOAPBinding.Use.LITERAL)
 public interface AddNumbersIF extends Remote {
  
     @WebMethod(operationName = "add", action = "urn:addNumbers")
