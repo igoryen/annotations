@@ -1,8 +1,8 @@
-// 2
+// 3
 
 @WebService(
-    name = "AddNumbers", 
-    targetNamespace = "http://duke.example.org")
+    endpointInterface = "annotations.server.AddNumbersIF")
+
 public class AddNumbersImpl {
     /**
      * @param number1
@@ -14,10 +14,8 @@ public class AddNumbersImpl {
     public int addNumbers(int number1, int number2) throws 
             AddNumbersException {
         if (number1 < 0 || number2 < 0) {
-            throw new AddNumbersException(
-                "Negative number cant be added!", 
-                "Numbers: " + number1 + ", " + number2);
-        }
-        return number1 + number2;
+            throw new AddNumbersException("Negative number cant be " +
+                    "added!", "Numbers: " + number1 + ", " + number2);
+        } return number1 + number2;
     }
 }
