@@ -1,7 +1,7 @@
-//v3
+//v4
 
 @WebService
-@HandlerChain(file = "handlers.xml")
+@BindingType(value = "http://www.w3.org/2003/05/soap/bindings/HTTP/")
 public class AddNumbersImpl {
     /**
      * @param number1
@@ -17,5 +17,4 @@ public class AddNumbersImpl {
                     "added!", "Numbers: " + number1 + ", " + number2);
         } return number1 + number2;
     }
-
 }
